@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-import { Header_component } from './components/Header_component';
+import  Header_component  from './components/Header_component';
 import { List_component } from './components/List_component';
 import { Detail_component } from './components/Detail_component';
 
