@@ -2,6 +2,8 @@ import React from 'react'
 
 export const Detail_component = () => {
   return (
-    <div>Detail_component</div>
+    <div>
+      <h1>este es mi componente</h1>
+    </div>
   )
 }
