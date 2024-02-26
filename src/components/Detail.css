@@ -1,0 +1,31 @@
+.titulo{
+    margin-right: 185vh;
+}
+
+.principal{
+    background-color: blue;
+    border-radius: 20px;
+    margin-right: 140vh;
+    min-height: 30vh;
+    min-width: 60vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.historial{
+    background-color: blue;
+    border-radius: 20px;
+    margin-right: 140vh;
+    min-height: 30vh;
+    min-width: 60vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
