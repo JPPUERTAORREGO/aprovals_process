@@ -3,28 +3,24 @@ import './Header_component.css'
 
 export const Header_component = () => {
   return (
-    <div class="contenedor_navbar">
-      <nav class="navbar">
-        <div>
-          <img class="logop" src="user.png" alt="logo"/>
-        </div>
-        <div class="tipoCuenta">
-          <h3>Administrador</h3>
-        </div>
-        <div class="container">
-          <div>
-          </div>
-          <h2>Flujo de aprovaciones</h2>
-            <ul class="nav-links">
-                <li><a href="#"><img class="imagenes" src="inicio.png" alt="user" width="30" height="30"/></a></li>
-                <li><a href="#"><img class="imagenes" src="user.png" alt="user" width="30" height="30"/></a></li>
-                <li><a href="#"><img class="imagenes" src="agregar.png" alt="agregar" width="30" height="30"/></a></li>
-                <li><a href="#"><img class="imagenes" src="salir.png" alt="salir" width="30" height="30"/></a></li>
-            </ul>
-        </div>
-      </nav>
+    <div class="navbar">
+      <a>
+        <a href="#"><img class="imagenes" src="user.png" alt="user" width="30" height="30"/></a>
+      </a>
+      <h5>Administrador</h5>
+      <div class="navbar-center">
+        <h2>Flujo de Aprobaciones</h2>
+      </div>
+      <div class="navbar-right">
+        <a href="#"><img class="imagenes" src="inicio.png" alt="user" width="30" height="30"/></a>
+        <a href="#"><img class="imagenes" src="user.png" alt="user" width="30" height="30"/></a>
+        <a href="#"><img class="imagenes" src="agregar.png" alt="agregar" width="30" height="30"/></a>
+        <a href="#"><img class="imagenes" src="salir.png" alt="salir" width="30" height="30"/></a>
+      </div>
     </div>
   )
 }
 
 export default Header_component;
+
+

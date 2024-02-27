@@ -1,59 +1,41 @@
-.contenedor_navbar{
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
 .navbar {
+    font-family: Arial, sans-serif;
+    margin: 0;
     background-color: #333;
     overflow: hidden;
-}
-.logop {
-    padding-left: 35px;
-    width: 70px; /* Tamaño deseado */
-    height: 35px;
+    color: antiquewhite;
 }
 
-.tipoCuenta h3{
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
     text-align: center;
-    padding-left: 20px;
-    color: #fff;
-    margin-top: 10px;
-    font-size: 17px;
-}
-.container_hd{
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-}
-h2{
-    color: #fff;
-}
-.nav-links li {
-    display: inline-block;
-    margin: 0 10px; /* Espacio entre elementos */
-}
-.nav-links li a {
-    color: #fff;
+    padding: 14px 20px;
     text-decoration: none;
 }
-.nav-links li a:hover {
-    color: #151515;
-}
-.nav-links img {
-    display: flex;
-    justify-content: center;
-}
-.imagenes{
-    margin-top: 15px;
+
+.navbar-center {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    flex-grow: 1;
 }
 
-@media (max-width: 768px) {
-    .navbar h3 {
-        margin-left: 10px; /* Ajustar según sea necesario */
-    }
-    .nav-links li {
-        display: block;
-        margin: 10px auto; /* Ajustar según sea necesario */
-    }
+.navbar-right {
+    float: right;
+    overflow: hidden;
+}
+
+.navbar-right a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
 }
