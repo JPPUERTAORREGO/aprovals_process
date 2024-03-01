@@ -1,5 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ContadorComponent from './components/ContadorComponent';
 
 import { Header_component } from './components/Header_component';
 import { List_component } from './components/List_component';
@@ -17,9 +20,14 @@ function App() {
       <div className="Detail">
         <Detail_component />
       </div>
+      <div>
+        <ContadorComponent/>
+      </div>
     </div>
   );
 }
+
+ReactDOM.render(<App />, document.getElementById('root'));
 
 export default App;
 
