@@ -1,17 +1,40 @@
-import React from 'react'
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button'; // Asegúrate de tener esta línea
-import Modal from 'react-bootstrap/Modal'; // Importamos el componente Modal de react-bootstrap
-import './Header_component.css' // Importamos los estilos del componente
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import './Header_component.css'
 
 export const Header_component = (props) => {
-  const [show, setShow] = useState(false); // Declaramos un estado llamado show con valor inicial false
+  const [show, setShow] = useState(false);
+  const [archivos, setArchivos] = useState([]);
 
-  const handleClose = () => setShow(false); // Función para cerrar el modal, establece el estado show en false
-  const handleShow = () => setShow(true);  // Función para abrir el modal, establece el estado show en true
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const manejarCambio = (evento) => {
+    for (let i = 0; i < evento.target.files.length; i++) {
+      if (evento.target.files[i].size > 1000000) {
+        alert('El archivo ' + evento.target.files[i].name + ' es demasiado grande.');
+        return;
+      }
+      if (!['image/jpeg', 'image/png'].includes(evento.target.files[i].type)) {
+        alert('El archivo ' + evento.target.files[i].name + ' no es un tipo de archivo permitido.');
+        return;
+      }
+    }
+    setArchivos(evento.target.files);
+  };
+
+  const manejarEnvio = (evento) => {
+    evento.preventDefault();
+    const formData = new FormData();
+    for (let i = 0; i < archivos.length; i++) {
+      formData.append('archivos', archivos[i]);
+    }
+    console.log(archivos);
+  };
 
   return (
-    <div class="navbar"> 
+    <div class="navbar">
       <a>
         <a href="#"><img class="imagenes" src="user.png" alt="user" width="30" height="30"/></a>
       </a>
@@ -22,14 +45,14 @@ export const Header_component = (props) => {
       <div class="navbar-right">
         <a href="#"><img class="imagenes" src="inicio.png" alt="user" width="30" height="30"/></a>
         <a href="#"><img class="imagenes" src="user.png" alt="user" width="30" height="30"/></a>
-         <a href="#"><img class="imagenes" src="agregar.png" alt="agregar" width="30" height="30" onClick={handleShow}/></a> {/*// Icono de agregar, al hacer clic se abre el modal */}
+        <a href="#"><img class="imagenes" src="agregar.png" alt="agregar" width="30" height="30" onClick={handleShow}/></a>
         <a href="#"><img class="imagenes" src="salir.png" alt="user" width="30" height="30"/></a>
-         <Modal show={show} onHide={handleClose}> {/*// Modal que se muestra u oculta dependiendo del estado show */}
+        <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Nueva solicitud</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <form>
+            <form onSubmit={manejarEnvio}>
               <label className='form-label'>Tipo de novedad</label>
               <select id="miSelect" name="miSelect" className='form-control'>
                   <option value="opcion1">Seleccionar</option>
@@ -57,7 +80,7 @@ export const Header_component = (props) => {
               <input type="number" className='form-control'/>
 
               <label  className='form-label'>Agregar archivo</label>
-              <input type="number" className='form-control'/>
+              <input type="file" multiple onChange={manejarCambio} className='form-control'/>
 
               <label className='form-label'>Aprovador</label>
               <select id="miSelect" name="miSelect" className='form-control'>
@@ -69,20 +92,20 @@ export const Header_component = (props) => {
                   <option value="opcion6">Persona 5</option>
                   <option value="opcion7">Persona 6</option>
               </select>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                  Cancelar
+                </Button>
+                <Button variant="primary" type="submit" onClick={handleClose}>
+                  Enviar
+                </Button>
+              </Modal.Footer>
             </form>
           </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>     {/*// Botón para cerrar el modal */}
-              Cancelar
-            </Button>
-            <Button variant="primary" onClick={handleClose}> {/*// Botón para guardar cambios y cerrar el modal */}
-              Agregar solicitud
-            </Button>
-          </Modal.Footer>
         </Modal>
       </div>
     </div>
-  )
+  );
 }
 
 export default Header_component;
