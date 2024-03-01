@@ -26,16 +26,57 @@ export const Header_component = (props) => {
         <a href="#"><img class="imagenes" src="salir.png" alt="user" width="30" height="30"/></a>
          <Modal show={show} onHide={handleClose}> {/*// Modal que se muestra u oculta dependiendo del estado show */}
           <Modal.Header closeButton>
-            <Modal.Title>Agregar solicitud</Modal.Title>
+            <Modal.Title>Nueva solicitud</Modal.Title>
           </Modal.Header>
-          <Modal.Body>Woohoo, you are reading this text in a modal!
+          <Modal.Body>
+            <form>
+              <label className='form-label'>Tipo de novedad</label>
+              <select id="miSelect" name="miSelect" className='form-control'>
+                  <option value="opcion1">Seleccionar</option>
+                  <option value="opcion2">Compra</option>
+                  <option value="opcion3">Levantamiento</option>
+                  <option value="opcion4">Modificación</option>
+                  <option value="opcion5">Traslado</option>
+                  <option value="opcion6">Baja</option>
+                  <option value="opcion7">Suspensión depreciación</option>
+              </select>
+
+              <label  className='form-label'>Descripción del equipo</label>
+              <textarea className='form-control'/>
+
+              <label  className='form-label'>Código del equipo</label>
+              <input type="text" className='form-control'/>
+
+              <label  className='form-label'>Ubicación técnica</label>
+              <input type="text" className='form-control'/>
+
+              <label  className='form-label'>Justificación</label>
+              <input type="text" className='form-control'/>
+
+              <label  className='form-label'>Valor activo (COP)</label>
+              <input type="number" className='form-control'/>
+
+              <label  className='form-label'>Agregar archivo</label>
+              <input type="number" className='form-control'/>
+
+              <label className='form-label'>Aprovador</label>
+              <select id="miSelect" name="miSelect" className='form-control'>
+                  <option value="opcion1">Numbre del aprovador</option>
+                  <option value="opcion2">Persona 1</option>
+                  <option value="opcion3">Persona 2</option>
+                  <option value="opcion4">Persona 3</option>
+                  <option value="opcion5">Persona 4</option>
+                  <option value="opcion6">Persona 5</option>
+                  <option value="opcion7">Persona 6</option>
+              </select>
+            </form>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>     {/*// Botón para cerrar el modal */}
-              Close
+              Cancelar
             </Button>
             <Button variant="primary" onClick={handleClose}> {/*// Botón para guardar cambios y cerrar el modal */}
-              Save Changes
+              Agregar solicitud
             </Button>
           </Modal.Footer>
         </Modal>
