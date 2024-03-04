@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Data from './Data.js';
+import Data from '../Data.js';
 
 
 const ContadorComponent = () => {

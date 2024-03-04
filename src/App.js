@@ -1,27 +1,36 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import ContadorComponent from './components/ContadorComponent';
 
 import { Header_component } from './components/Header_component';
 import { List_component } from './components/List_component';
 import { Detail_component } from './components/Detail_component';
+import Data from './Data.js';
 
 function App() {
+  const [posicion, setPosicion] = useState(0);
+  const [contador, setContador] = useState(Data.solicitudes[0]['Código de equipo']);
+
+  const cambiarPosicion = (nuevaPosicion) => {
+    setPosicion(nuevaPosicion);
+    setContador(Data.solicitudes[nuevaPosicion]['Código de equipo']);
+  };
+
+  const cambiarContador = (nuevoContador) => {
+    setContador(nuevoContador);
+  };
+
   return (
     <div className="App">
       <div className="Header">
         <Header_component />
       </div>
       <div className="List">
-        <List_component />
+        <List_component cambiarPosicion={cambiarPosicion} />
       </div>
       <div className="Detail">
-        <Detail_component />
-      </div>
-      <div>
-        <ContadorComponent/>
+      <Detail_component cambiarPosicion={cambiarPosicion} cambiarContador={cambiarContador} posicion={posicion} contador={contador} />
       </div>
     </div>
   );

@@ -1,17 +1,9 @@
 import React, { useState } from 'react';
-import Data from './Data.js';
+import Data from '../Data.js';
 import './Detail.css';
 
-export const Detail_component = () => {
-  const [posicion, setPosicion] = useState(0);
-  const [contador, setContador] = useState(Data.usuarios[0].edad);
-
-  const cambiarPosicion = (nuevaPosicion) => {
-    setPosicion(nuevaPosicion);
-    setContador(Data.usuarios[nuevaPosicion].edad);
-  };
-
-  const usuario = Data.usuarios[posicion];
+export const Detail_component = ({ cambiarPosicion,cambiarContador, posicion, contador }) => {
+  const usuario = Data.solicitudes[posicion];
   const [comentario, setComentario] = useState('');
   const [historialComentarios, setHistorialComentarios] = useState([]);
 
@@ -39,22 +31,18 @@ export const Detail_component = () => {
     <section className='set'>
       <h2 className='titulo'>Detail</h2>
       <div className='principal'>
-        <div className='bttn-usuario'>
-          <button onClick={() => cambiarPosicion(0)}>Mostrar Usuario 1</button>
-          <button onClick={() => cambiarPosicion(1)}>Mostrar Usuario 2</button>
-          <button onClick={() => cambiarPosicion(2)}>Mostrar Usuario 3</button>
-        </div>
         <div className='princi'>
           <div key={usuario.id} className='usuario-info'>
-            <h2>{usuario.nombre} {usuario.apellido}</h2>
-            <p>Edad: {contador}</p>
-            <p>Correo: {usuario.correo}</p>
-            <p>Cargo: {usuario.cargo}</p>
-            <p>Área: {usuario.área}</p>
-            <p>Estado: {usuario.status ? 'Activo' : 'Inactivo'}</p>
+            <h2>{usuario['tipo de novedad'][usuario.id]} {usuario.Descripción}</h2>
+            <p>codigo de equipo: {contador}</p>
+            <p>Ubicacion técnica: {usuario['Ubicacion técnica']}</p>
+            <p>Justificación: {usuario.Justificación}</p>
+            <p>Valor activo: {usuario['Valor activo']}</p>
+            <p>Archivo: {usuario.Archivo ? 'Activo' : 'Inactivo'}</p>
+            <p>Aprovador: {usuario.Aprovador[usuario.id]}</p>
             <div className='bttn-increment'>
-              <button onClick={() => { setContador(contador + 1) }}>incrementa</button>
-              <button onClick={() => { setContador(contador - 1) }}>decrementa</button>
+              <button onClick={() => { cambiarContador(contador + 1) }}>incrementa</button>
+              <button onClick={() => { cambiarContador(contador - 1) }}>decrementa</button>
             </div>
           </div>
         </div>
@@ -85,7 +73,6 @@ export const Detail_component = () => {
     </section>
   );
 };
-
 
 
 <div></div>
