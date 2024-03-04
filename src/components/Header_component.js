@@ -1,7 +1,8 @@
+import './Header_component.css'
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import './Header_component.css'
+import { useForm } from 'react-hook-form';
 
 export const Header_component = (props) => {
   const [show, setShow] = useState(false);
@@ -24,79 +25,84 @@ export const Header_component = (props) => {
     setArchivos(evento.target.files);
   };
 
-  const manejarEnvio = (evento) => {
-    evento.preventDefault();
-    const formData = new FormData();
-    for (let i = 0; i < archivos.length; i++) {
-      formData.append('archivos', archivos[i]);
-    }
-    console.log(archivos);
+  const manejarEnvio = (data) => {
+    console.log(data);
+    handleClose();
   };
 
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
   return (
-    <div class="navbar">
-      <a>
-        <a href="#"><img class="imagenes" src="user.png" alt="user" width="30" height="30"/></a>
-      </a>
+    <div className="navbar">
+      <a href="#"><img className="imagenes" src="user.png" alt="user" width="30" height="30"/></a>
       <h5>Administrador</h5>
-      <div class="navbar-center">
+      <div className="navbar-center">
         <h2>Flujo de Aprobaciones</h2>
       </div>
-      <div class="navbar-right">
-        <a href="#"><img class="imagenes" src="inicio.png" alt="user" width="30" height="30"/></a>
-        <a href="#"><img class="imagenes" src="user.png" alt="user" width="30" height="30"/></a>
-        <a href="#"><img class="imagenes" src="agregar.png" alt="agregar" width="30" height="30" onClick={handleShow}/></a>
-        <a href="#"><img class="imagenes" src="salir.png" alt="user" width="30" height="30"/></a>
+      <div className="navbar-right">
+        <a href="#"><img className="imagenes" src="inicio.png" alt="user" width="30" height="30"/></a>
+        <a href="#"><img className="imagenes" src="user.png" alt="user" width="30" height="30"/></a>
+        <a href="#"><img className="imagenes" src="agregar.png" alt="agregar" width="30" height="30" onClick={handleShow}/></a>
+        <a href="#"><img className="imagenes" src="salir.png" alt="user" width="30" height="30"/></a>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Nueva solicitud</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <form onSubmit={manejarEnvio}>
+            <form onSubmit={handleSubmit(manejarEnvio)}>
               <label className='form-label'>Tipo de novedad</label>
-              <select id="miSelect" name="miSelect" className='form-control'>
-                  <option value="opcion1">Seleccionar</option>
-                  <option value="opcion2">Compra</option>
-                  <option value="opcion3">Levantamiento</option>
-                  <option value="opcion4">Modificación</option>
-                  <option value="opcion5">Traslado</option>
-                  <option value="opcion6">Baja</option>
-                  <option value="opcion7">Suspensión depreciación</option>
+              <select {...register("miSelect", { required: true })} className='form-control'>
+                <option value="">Seleccionar</option>
+                <option value="opcion1">Compra</option>
+                <option value="opcion2">Levantamiento</option>
+                <option value="opcion3">Modificación</option>
+                <option value="opcion4">Traslado</option>
+                <option value="opcion5">Baja</option>
+                <option value="opcion6">Suspensión depreciación</option>
               </select>
+              {errors.miSelect && <span style={{ color: 'red' }}>Este campo es requerido</span>}
 
-              <label  className='form-label'>Descripción del equipo</label>
-              <textarea className='form-control'/>
+              <label className='form-label'>Descripción del equipo</label>
+              <textarea {...register("descripcion", { required: true })} className='form-control'/>
+              {errors.descripcion && <span style={{ color: 'red' }}>Este campo es requerido</span>}
 
-              <label  className='form-label'>Código del equipo</label>
-              <input type="text" className='form-control'/>
+              <label className='form-label'>Código del equipo</label>
+              <input {...register("codigo", { required: true })} type="text" className='form-control'/>
+              {errors.codigo && <span style={{ color: 'red' }}>Este campo es requerido</span>}
 
-              <label  className='form-label'>Ubicación técnica</label>
-              <input type="text" className='form-control'/>
+              <label className='form-label'>Ubicación técnica</label>
+              <input {...register("ubicacion", { required: true })} type="text" className='form-control'/>
+              {errors.ubicacion && <span style={{ color: 'red' }}>Este campo es requerido</span>}
 
-              <label  className='form-label'>Justificación</label>
-              <input type="text" className='form-control'/>
+              <label className='form-label'>Justificación</label>
+              <input {...register("justificacion", { required: true })} type="text" className='form-control'/>
+              {errors.justificacion && <span style={{ color: 'red' }}>Este campo es requerido</span>}
 
-              <label  className='form-label'>Valor activo (COP)</label>
-              <input type="number" className='form-control'/>
+              <label className='form-label'>Valor activo (COP)</label>
+              <input {...register("valor", { required: true })} step="0.01" type="number" className='form-control'/>
+              {errors.valor && <span style={{ color: 'red' }}>Este campo es requerido</span>}
 
-              <label  className='form-label'>Agregar archivo</label>
-              <input type="file" multiple onChange={manejarCambio} className='form-control'/>
+              <label className='form-label'>Agregar archivo</label>
+              <input {...register("archivo", { required: true })} type="file" multiple className='form-control'/>
+              {errors.archivo && <span style={{ color: 'red' }}>Este campo es requerido</span>} 
 
               <label className='form-label'>Aprovador</label>
-              <select id="miSelect" name="miSelect" className='form-control'>
-                  <option value="opcion1">Numbre del aprovador</option>
-                  <option value="opcion2">Persona 1</option>
-                  <option value="opcion3">Persona 2</option>
-                  <option value="opcion4">Persona 3</option>
-                  <option value="opcion5">Persona 4</option>
-                  <option value="opcion6">Persona 5</option>
-                  <option value="opcion7">Persona 6</option>
+              <select {...register("aprovador", { required: true })} className='form-control'>
+                <option value="">Nombre del aprovador</option>
+                <option value="opcion1">Persona 1</option>
+                <option value="opcion2">Persona 2</option>
+                <option value="opcion3">Persona 3</option>
+                <option value="opcion4">Persona 4</option>
+                <option value="opcion5">Persona 5</option>
+                <option value="opcion6">Persona 6</option>
               </select>
+              {errors.aprovador && <span style={{ color: 'red' }}>Este campo es requerido</span>}
+
               <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
                   Cancelar
                 </Button>
-                <Button variant="primary" type="submit" onClick={handleClose}>
+                <Button variant="primary" type="submit">
                   Enviar
                 </Button>
               </Modal.Footer>
