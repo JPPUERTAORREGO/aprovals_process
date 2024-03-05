@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal'; // Importamos el componente Modal de 
 import { useForm } from 'react-hook-form';  // Importamos el hook useForm de react-hook-form.
 
 export const Header_component = (props) => {
-   // Usamos el hook useState para manejar el estado del modal y de los archivos
+  // Usamos el hook useState para manejar el estado del modal y de los archivos
   const [show, setShow] = useState(false); // Estado para mostrar u ocultar el modal
   const [archivos, setArchivos] = useState([]); // Estado para almacenar los archivos seleccionados por el usuario.
 
@@ -43,7 +43,7 @@ export const Header_component = (props) => {
     const confirmacion = window.confirm('¿Deseas guardar los datos?');
     // Si el usuario confirma que desea guardar los datos...
     if (confirmacion) {
-      console.log('Datos:', data);  // Imprimimos los datos del formulario en la consola.
+      console.log('Object:', data);  // Imprimimos los datos del formulario en la consola.
       reset(); // Limpia los campos del formulario
       setShow(false); // Cerramos el modal.
     }
@@ -59,8 +59,8 @@ export const Header_component = (props) => {
       setShow(false); // Cerramos el modal.
     }
   };
-  
-  
+
+
   // Renderizamos el componente
   return (
     <div className="navbar">
@@ -79,6 +79,11 @@ export const Header_component = (props) => {
             <Modal.Title>Nueva solicitud</Modal.Title>
           </Modal.Header>
           <Modal.Body>
+              <label className='form-label'></label>
+              {/* //readOnly= es para que no puedan ingresar datos  */}
+              <input placeholder='id' readOnly type="text" className='form-control' />
+              {/* {errors.ubicacion && <span style={{ color: 'red' }}>Este campo es requerido</span>} */}
+
             <form onSubmit={handleSubmit(manejarEnvio)}>
               <label className='form-label'></label>
               <select {...register("miSelect", { required: true })} className='form-select'>
@@ -127,7 +132,6 @@ export const Header_component = (props) => {
                 <option value="opcion6">Persona 6</option>
               </select>
               {errors.aprovador && <span style={{ color: 'red' }}>Este campo es requerido</span>}
-
               <Modal.Footer>
                 <Button variant="secondary"  onClick={manejarCancelacion}>
                   Cancelar

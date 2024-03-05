@@ -39,6 +39,12 @@ export const List_component = () => {
           ))}
         </Modal.Body>
         <Modal.Footer>
+          <Button color='primary'>
+            Editar
+          </Button>
+          <Button color='primary'>
+            Eliminar
+          </Button>
           <Button variant="secondary" onClick={handleClose}>
             Cerrar
           </Button>
