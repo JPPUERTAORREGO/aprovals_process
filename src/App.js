@@ -11,6 +11,7 @@ import Data from './Data.js';
 function App() {
   const [posicion, setPosicion] = useState(0);
   const [contador, setContador] = useState(Data.solicitudes[0]['Código de equipo']);
+  const [isAccordionOpen, setIsAccordionOpen] = useState(false);
 
   const cambiarPosicion = (nuevaPosicion) => {
     setPosicion(nuevaPosicion);
@@ -30,7 +31,7 @@ function App() {
         <List_component cambiarPosicion={cambiarPosicion} />
       </div>
       <div className="Detail">
-      <Detail_component cambiarPosicion={cambiarPosicion} cambiarContador={cambiarContador} posicion={posicion} contador={contador} />
+      <Detail_component cambiarPosicion={cambiarPosicion} cambiarContador={cambiarContador} posicion={posicion} contador={contador} activeKey={String(posicion)} />
       </div>
     </div>
   );

@@ -9,8 +9,9 @@
 .titulo{
     margin-top: 20px;
     margin-right: 6vh;
-    margin-left: 8vh;
-    color: whitesmoke;
+    margin-left: 
+    8vh;
+    color:black;
 }
 
 .principal{
@@ -18,7 +19,7 @@
     border:solid 2px black;
     border-radius: 20px;
     margin-right: 5vh;
-    margin-left: -20vh;
+    margin-left: -25vh;
     margin-top: 10vh;
     margin-bottom: 10vh;
     min-height: 40vh;
