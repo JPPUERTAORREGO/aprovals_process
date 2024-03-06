@@ -2,13 +2,11 @@ import React, { useState } from 'react';
 import Data from '../Data.js';
 import './Detail.css';
 import Accordion from 'react-bootstrap/Accordion';
-import { List_component } from './List_component';
 
-export const Detail_component = ({ cambiarPosicion, cambiarContador, posicion, contador }) => {
+export const Detail_component = ({ cambiarPosicion, cambiarContador, posicion, contador, activeKey, setActiveKey }) => {
   const usuario = Data.solicitudes[posicion];
   const [comentario, setComentario] = useState('');
   const [historialComentarios, setHistorialComentarios] = useState([]);
-  const [activeKey, setActiveKey] = useState(String(posicion));
 
 
   const handleComentarioChange = (event) => {
@@ -37,10 +35,9 @@ export const Detail_component = ({ cambiarPosicion, cambiarContador, posicion, c
 
   return (
     <>
-    <List_component cambiarPosicion={cambiarPosicion} handleAccordionToggle={handleAccordionToggle} />
     <Accordion activeKey={activeKey}>
       <Accordion.Item eventKey={String(posicion)}>
-        <Accordion.Header onClick={handleAccordionToggle}>Accordion Item #1</Accordion.Header>
+        <Accordion.Header onClick={handleAccordionToggle}>{usuario['tipo de novedad'][usuario.id]} </Accordion.Header>
         <Accordion.Body>
           <section className='set'>
             <h2 className='titulo'>Detail</h2>

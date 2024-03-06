@@ -35,9 +35,9 @@
 
 .bttn-usuario{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .bttn-usuario button{
@@ -45,7 +45,7 @@
     border-radius: 20px;
     height: 5vh;
     min-width: 10vh;
-    padding-bottom: 5vh;
+    padding-bottom: 2vh;
 }
 
 .bttn-usuario button:hover{

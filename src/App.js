@@ -8,10 +8,11 @@ import { List_component } from './components/List_component';
 import { Detail_component } from './components/Detail_component';
 import Data from './Data.js';
 
+
 function App() {
   const [posicion, setPosicion] = useState(0);
   const [contador, setContador] = useState(Data.solicitudes[0]['Código de equipo']);
-  const [isAccordionOpen, setIsAccordionOpen] = useState(false);
+  const [activeKey, setActiveKey] = useState(String(posicion));
 
   const cambiarPosicion = (nuevaPosicion) => {
     setPosicion(nuevaPosicion);
@@ -22,16 +23,20 @@ function App() {
     setContador(nuevoContador);
   };
 
+  const handleAccordionToggle = () => {
+    setActiveKey(activeKey === null ? String(posicion) : null);
+  };
+
   return (
     <div className="App">
       <div className="Header">
         <Header_component />
       </div>
       <div className="List">
-        <List_component cambiarPosicion={cambiarPosicion} />
+        <List_component cambiarPosicion={cambiarPosicion} handleAccordionToggle={handleAccordionToggle} />
       </div>
       <div className="Detail">
-      <Detail_component cambiarPosicion={cambiarPosicion} cambiarContador={cambiarContador} posicion={posicion} contador={contador} activeKey={String(posicion)} />
+      <Detail_component cambiarPosicion={cambiarPosicion} cambiarContador={cambiarContador} posicion={posicion} contador={contador} handleAccordionToggle={handleAccordionToggle} activeKey={activeKey} setActiveKey={setActiveKey}/>
       </div>
     </div>
   );
