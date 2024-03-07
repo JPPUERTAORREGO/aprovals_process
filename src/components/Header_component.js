@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button'; // Importamos el componente Button 
 import Modal from 'react-bootstrap/Modal'; // Importamos el componente Modal de react-bootstrap.
 import { useForm } from 'react-hook-form';  // Importamos el hook useForm de react-hook-form.
 
+
 export const Header_component = (props) => {
   // Usamos el hook useState para manejar el estado del modal y de los archivos
   const [show, setShow] = useState(false); // Estado para mostrar u ocultar el modal
@@ -147,5 +148,3 @@ export const Header_component = (props) => {
     </div>
   );
 }
-
-export default Header_component;
