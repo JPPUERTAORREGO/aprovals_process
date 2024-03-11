@@ -8,7 +8,8 @@
         "correo": "juan.perez@example.com",
         "cargo":"aprobador",
         "status":true,
-        "área":"mantenimiento"
+        "área":"mantenimiento",
+        "comentarios":[]
       },
       {
         "id": 2,
