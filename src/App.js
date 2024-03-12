@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header_component/>
+      {/* <Header_component/> */}
       <Prueba/>
     </div>
   );

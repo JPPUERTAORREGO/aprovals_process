@@ -1,50 +1,109 @@
 import React, {useState} from 'react'
 import data from "./solicitud.json"
 import { ListView } from './ListView';
-import { NewSolicitudForm } from './NewSolicitudForm';
+// import { NewSolicitudForm } from './NewSolicitudForm';
+import { Header_component } from './Header_component';
 
 export const Prueba = () => {
   const [solicitudes,setSolicitudes] = useState(data.solicitudes)
   const [valorSelect , setValorSelect] = useState("")
-  const [valorAge , setValorAge] = useState("")
+  const [valorDescripcion , setValorDescripcion] = useState("")
+  const [valorEquipo , setValorEquipo] = useState("")
+  const [valorUbicacion , setValorUbicacion] = useState("")
+  const [valorJustificaion , setValorJustificaion] = useState("")
+  const [valorActivo , setValorActivo] = useState("")
+  const [valorArchivo , setValorArchivo] = useState("")
+  const [valorAprovedor , setValorAprovedor] = useState("")
+  
+  // console.log(solicitudes)
   console.log(valorSelect)
-  console.log(valorAge)
-  console.log(solicitudes)
+  // console.log(valorDescripcion)
+  // console.log(valorEquipo)
+  // console.log(valorUbicacion)
+  // console.log(valorJustificaion)
+  // console.log(valorActivo)
+  // console.log(valorArchivo)
+  // console.log(valorAprovedor)
 
-    const handleOnChageSelect =(e)=>{
-      setValorSelect(e.target.value)
+  const handleOnChageSelect =(e)=>{
+    setValorSelect(e.target.value)
+  }
+
+  const handleOnChangeEquipo =(e)=>{
+    setValorDescripcion(e.target.value)
+  }
+
+  const handleOnChangeCodigo =(e)=>{
+    setValorEquipo(e.target.value)
+  }
+
+  const handleOnChangeUbi =(e)=>{
+    setValorUbicacion(e.target.value)
+  }
+
+  const handleOnChangeJusti =(e)=>{
+    setValorJustificaion(e.target.value)
+  }
+
+  const handleOnChangeValor =(e)=>{
+    setValorActivo(e.target.value)
+  }
+
+  const handleOnChangeMulti =(e)=>{
+    setValorArchivo(e.target.value)
+  }
+
+  const handleOnChageSelectProve =(e)=>{
+    setValorAprovedor(e.target.value)
+  }
+
+
+
+  const handleOnClick =(e)=>{
+  
+    const newSolicitud = {
+      "id": "valorId",
+      "tipo de novedad": valorSelect,
+      "Descripción": valorDescripcion,
+      "Código de equipo": valorEquipo,
+      "Ubicacion técnica": valorUbicacion,
+      "Justificación": valorJustificaion, 
+      "Valor activo": valorActivo,
+      "Archivo": valorArchivo,
+      "Aprovador": valorAprovedor
     }
 
-    const handleOnChangeAge =(e)=>{
-      setValorAge(e.target.value)
-    }
-
-    const handleOnClick =(e)=>{
-     
-      const newSolicitud = {
-        "Tipo de novedad": valorSelect,
-        "age": valorAge,
-        "secretIdentity": "Dan Jukes 4"
-      }
-
-      setSolicitudes([...solicitudes,newSolicitud]) 
-      e.preventDefault()
-      setValorSelect("")
-      setValorAge("")
-      
-    }
+    console.log(newSolicitud)
+    setSolicitudes([...solicitudes,newSolicitud]) 
+    e.preventDefault()
+    setValorSelect("")
+    setValorDescripcion("")
+    setValorEquipo("")
+    setValorUbicacion("")
+    setValorJustificaion("")
+    setValorActivo("")
+    setValorArchivo("")
+    setValorAprovedor("")
+  }
 
   return (  
 
     <>
-        <div>
-      <NewSolicitudForm 
-      handleOnChageSelect={handleOnChageSelect}
-      handleOnChangeAge={handleOnChangeAge}
-      handleOnClick = {handleOnClick}
-      />
-      <ListView solicitudes ={solicitudes}/>
-        </div>
-  </>
+      <div>
+        <Header_component 
+          handleOnChageSelect={handleOnChageSelect}
+          handleOnChangeEquipo={handleOnChangeEquipo}
+          handleOnChangeCodigo={handleOnChangeCodigo}
+          handleOnChangeUbi={handleOnChangeUbi}
+          handleOnChangeJusti={handleOnChangeJusti}
+          handleOnChangeValor={handleOnChangeValor}
+          handleOnChangeMulti={handleOnChangeMulti}
+          handleOnChageSelectProve={handleOnChageSelectProve}
+          // handleOnChangeAge={handleOnChangeAge}
+          handleOnClick = {handleOnClick}
+        />
+        <ListView solicitudes ={solicitudes}/>
+      </div>
+    </>
   )
 }

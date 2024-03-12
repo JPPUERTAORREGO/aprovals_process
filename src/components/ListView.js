@@ -7,13 +7,26 @@ export const ListView = ({solicitudes}) => {
 //console.log(solicitudes)
   return (
     <div>
-      {solicitudes.map((arg,index)=>(
-        <CardView key = {index}
-        solicitudes= {arg}/>
+      {solicitudes.map((solicutud)=>(
+        <CardView key = {solicutud.id}
+        solicitud= {solicutud}/>
       ))}
-      
     </div>
   )
-  
-
 }
+
+// export const ListView = ({solicitudes}) => {
+//   //console.log(solicitudes)
+//     return (
+//       <div>
+//         {solicitudes.map((arg,index)=>(
+//           <CardView key = {index}
+//           solicitudes= {arg}/>
+//         ))}
+        
+//       </div>
+//     )
+    
+  
+//   }
+  

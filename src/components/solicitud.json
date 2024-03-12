@@ -1,37 +1,36 @@
 {"solicitudes":[
       {
-        "Tipo_de_novedad":"Baja de equipo",
-        "Código de equipo":10001595,
-        "Nombre de equipo": "Individual 1",
-        "Valor activo COP":15000000,
-        "Justificación": "Actualización tecnológica",
-        "Aprobador":"JMB",
-        "Estado": "Aprobado",
-        "Solicitante":"JPP",
-        "Fecha":"01/01/2024"
+        "id": 1,
+        "tipo de novedad": "Compra",
+        "Descripción":"12",
+        "Código de equipo":"",
+        "Ubicacion técnica":"",
+        "Justificación":"",
+        "Valor activo":"",
+        "Archivo":"",
+        "Aprovador":["Persona 1", "Persona 2", "Persona 3", "Persona 4", "Persona 5", "Persona 6"]
       },
       {
-        "Tipo_de_novedad":"Traslado",
-        "Código de equipo":10001594,
-        "Nombre de equipo": "Individual 2",
-        "Valor activo COP":5000000,
-        "Justificación": "Actualización tecnológica",
-        "Aprobador":"JMB",
-        "Estado": "Pendiente",
-        "Solicitante":"JPP",
-        "Fecha":"01/01/2024"
+        "id": 2,
+        "tipo de novedad": "Levantamiento",
+        "Descripción":"15",
+        "Código de equipo":"",
+        "Ubicacion técnica":"",
+        "Justificación":"",
+        "Valor activo":"",
+        "Archivo":"",
+        "Aprovador":["Persona 1", "Persona 2", "Persona 3", "Persona 4", "Persona 5", "Persona 6"]
       },
       {
-        "Tipo_de_novedad":"Traslado",
-        "Código de equipo":10001594,
-        "Nombre de equipo": "Individual 2",
-        "Valor activo COP":5000000,
-        "Justificación": "Actualización tecnológica",
-        "Aprobador":"JMB",
-        "Estado": "Pendiente",
-        "Solicitante":"JPP",
-        "Fecha":"01/01/2024"
+        "id": 3,
+        "tipo de novedad": "Modificación",
+        "Descripción":"1558",
+        "Código de equipo":"",
+        "Ubicacion técnica":"",
+        "Justificación":"",
+        "Valor activo":"",
+        "Archivo":"",
+        "Aprovador":["Persona 1", "Persona 2", "Persona 3", "Persona 4", "Persona 5", "Persona 6"]
       }
-    ],
-    "usuarios":[1,2,3,4,5]
+    ]
   }
