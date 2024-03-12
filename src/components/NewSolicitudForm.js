@@ -25,3 +25,4 @@ export const NewSolicitudForm = ({handleOnChageSelect, handleOnChangeAge, handle
     </div>
   )
 }
+

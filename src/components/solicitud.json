@@ -34,7 +34,44 @@
         "Estado": "Pendiente",
         "Solicitante":"JPP",
         "Fecha":"01/01/2024"
+        "fecha":"23/02/2010",
+        "tipo de novedad": "Compra",
+        "Descripción":"",
+        "Código de equipo":"",
+        "Ubicacion técnica":"",
+        "Justificación":"",
+        "Valor activo":"",
+        "Archivo":"",
+        "Aprovador":"Persona 1",
+        "Estado":"Aprovado"
+      },
+      {
+        "id": 2,
+        "fecha":"27/12/2021",
+        "tipo de novedad": "Levantamiento",
+        "Descripción":"",
+        "Código de equipo":"",
+        "Ubicacion técnica":"",
+        "Justificación":"",
+        "Valor activo":"",
+        "Archivo":"",
+        "Aprovador": "Persona 2",
+        "Estado":"No aprovado"
+
+      },
+      {
+        "id": 3,
+        "fecha":"13/09/2024",
+        "tipo de novedad": "Modificación",
+        "Descripción":"",
+        "Código de equipo":"",
+        "Ubicacion técnica":"",
+        "Justificación":"",
+        "Valor activo":"",
+        "Archivo":"",
+        "Aprovador": "Persona 3",
+        "Estado":"Aprovado"
+
       }
-    ],
-    "usuarios":[1,2,3,4,5]
+    ]
   }

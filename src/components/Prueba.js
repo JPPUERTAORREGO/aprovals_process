@@ -23,7 +23,80 @@ export const Prueba = () => {
       "Tipo de novedad": valorSelect,
       "age": valorAge,
       "secretIdentity": "Dan Jukes 4"
+// import { NewSolicitudForm } from './NewSolicitudForm';
+import { Header_component } from './Header_component';
+
+export const Prueba = () => {
+  const [solicitudes,setSolicitudes] = useState(data.solicitudes)
+  const [valorSelect , setValorSelect] = useState("")
+  const [valorDescripcion , setValorDescripcion] = useState("")
+  const [valorEquipo , setValorEquipo] = useState("")
+  const [valorUbicacion , setValorUbicacion] = useState("")
+  const [valorJustificaion , setValorJustificaion] = useState("")
+  const [valorActivo , setValorActivo] = useState("")
+  const [valorArchivo , setValorArchivo] = useState("")
+  const [valorAprovedor , setValorAprovedor] = useState("")
+  
+  // console.log(solicitudes)
+  //console.log(valorSelect)
+  // console.log(valorDescripcion)
+  // console.log(valorEquipo)
+  // console.log(valorUbicacion)
+  // console.log(valorJustificaion)
+  // console.log(valorActivo)
+  // console.log(valorArchivo)
+  // console.log(valorAprovedor)
+
+  const handleOnChageSelect =(e)=>{
+    setValorSelect(e.target.value)
+  }
+
+  const handleOnChangeEquipo =(e)=>{
+    setValorDescripcion(e.target.value)
+  }
+
+  const handleOnChangeCodigo =(e)=>{
+    setValorEquipo(e.target.value)
+  }
+
+  const handleOnChangeUbi =(e)=>{
+    setValorUbicacion(e.target.value)
+  }
+
+  const handleOnChangeJusti =(e)=>{
+    setValorJustificaion(e.target.value)
+  }
+
+  const handleOnChangeValor =(e)=>{
+    setValorActivo(e.target.value)
+  }
+
+  const handleOnChangeMulti =(e)=>{
+    setValorArchivo(e.target.value)
+  }
+
+  const handleOnChageSelectProve =(e)=>{
+    setValorAprovedor(e.target.value)
+  }
+
+
+
+  const handleOnClick =(e)=>{
+    
+    const newSolicitud = {
+      "id": "valorId",
+      "fecha": new Date().toLocaleDateString(),
+      "tipo de novedad": valorSelect,
+      "Descripción": valorDescripcion,
+      "Código de equipo": valorEquipo,
+      "Ubicacion técnica": valorUbicacion,
+      "Justificación": valorJustificaion, 
+      "Valor activo": valorActivo,
+      "Archivo": valorArchivo,
+      "Aprovador": valorAprovedor,
+      "Estado":"No aprovado"
     }
+    //console.log(newSolicitud)
 
     setSolicitudes([...solicitudes, newSolicitud])
     e.preventDefault()
@@ -42,6 +115,37 @@ export const Prueba = () => {
           handleOnClick={handleOnClick}
         />
         <ListView solicitudes={solicitudes} valorAge={valorAge} />
+    // console.log(newSolicitud)
+    setSolicitudes([...solicitudes,newSolicitud]) 
+    e.preventDefault()
+    setValorSelect("")
+    setValorDescripcion("")
+    setValorEquipo("")
+    setValorUbicacion("")
+    setValorJustificaion("")
+    setValorActivo("")
+    setValorArchivo("")
+    setValorAprovedor("")
+
+    
+  }
+console.log(solicitudes)
+  return (  
+    <>
+      <div>
+        <Header_component 
+          handleOnChageSelect={handleOnChageSelect}
+          handleOnChangeEquipo={handleOnChangeEquipo}
+          handleOnChangeCodigo={handleOnChangeCodigo}
+          handleOnChangeUbi={handleOnChangeUbi}
+          handleOnChangeJusti={handleOnChangeJusti}
+          handleOnChangeValor={handleOnChangeValor}
+          handleOnChangeMulti={handleOnChangeMulti}
+          handleOnChageSelectProve={handleOnChageSelectProve}
+          // handleOnChangeAge={handleOnChangeAge}
+          handleOnClick = {handleOnClick}
+        />
+        <ListView solicitudes ={solicitudes}/>
       </div>
     </>
   )
