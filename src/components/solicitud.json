@@ -1,5 +1,6 @@
 {"solicitudes":[
       {
+        "id": 1,
         "Tipo_de_novedad":"Baja de equipo",
         "Código de equipo":10001595,
         "Nombre de equipo": "Individual 1",
@@ -11,6 +12,7 @@
         "Fecha":"01/01/2024"
       },
       {
+        "id": 2,
         "Tipo_de_novedad":"Traslado",
         "Código de equipo":10001594,
         "Nombre de equipo": "Individual 2",
@@ -22,6 +24,7 @@
         "Fecha":"01/01/2024"
       },
       {
+        "id": 3,
         "Tipo_de_novedad":"Traslado",
         "Código de equipo":10001594,
         "Nombre de equipo": "Individual 2",

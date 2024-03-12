@@ -2,8 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-export const NewSolicitudForm = (props) => {
-  const {handleOnChageSelect,handleOnChangeAge, handleOnClick} = props
+export const NewSolicitudForm = ({handleOnChageSelect, handleOnChangeAge, handleOnClick}) => {
 
   return (
     <div>
