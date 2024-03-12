@@ -79,13 +79,13 @@ export const Header_component = (props) => {
 
           <label className='form-label'></label>
           <select  className='form-select' onChange={handleOnChageSelectProve}>
-            <option value="">Nombre del aprovador</option>
-            <option value="opcion1">Persona 1</option>
-            <option value="opcion2">Persona 2</option>
-            <option value="opcion3">Persona 3</option>
-            <option value="opcion4">Persona 4</option>
-            <option value="opcion5">Persona 5</option>
-            <option value="opcion6">Persona 6</option>
+            <option value="">Nombre del aprovador</option>f
+            <option >Persona 1</option>
+            <option >Persona 2</option>
+            <option >Persona 3</option>
+            <option >Persona 4</option>
+            <option >Persona 5</option>
+            <option >Persona 6</option>
           </select>
         </Modal.Body>
         <Modal.Footer>

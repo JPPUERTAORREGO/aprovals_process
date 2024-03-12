@@ -7,10 +7,6 @@ export const ListView = ({solicitudes}) => {
 //console.log(solicitudes)
   return (
     <div>
-      {solicitudes.map((solicitud)=>(
-        <CardView key = {solicitud.id}
-        solicitud = {solicitud} 
-        />
       {solicitudes.map((solicutud)=>(
         <CardView key = {solicutud.id}
         solicitud= {solicutud}/>

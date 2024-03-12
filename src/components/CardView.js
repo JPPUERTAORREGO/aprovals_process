@@ -2,28 +2,10 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-export const CardView = ({ solicitud, valorAge }) => {
-  console.log(solicitud)
-
-  const {id,Tipo_de_novedad,
-} = solicitud
-
-  console.log(solicitud)
-  return (
-    <div>
-      <Card style={{ width: '18rem' }}>
-        <Card.Body>
-          <Card.Title>{Tipo_de_novedad}</Card.Title>
-          <Card.Text>
-            estado:{valorAge}
-          </Card.Text>
-          <Button variant="primary">{id} </Button>
-        </Card.Body>
-      </Card></div>
-export const CardView = ({solicitud}) => {
+export const CardView = ({ solicitud }) => {
   //console.log(solicitud)
 
-  const { 
+  const {
     "id": id,
     "tipo de novedad": tipoDeNovedad,
     "Descripción": descripcion,
@@ -34,19 +16,22 @@ export const CardView = ({solicitud}) => {
     "Archivo": archivo,
     "Aprovador": aprovador
   } = solicitud;
-  
+
 
   return (
-    <div>    
+    <div>
       <Card style={{ width: '18rem' }}>
         <Card.Body>
-          <Card.Title>{tipoDeNovedad}</Card.Title>
+          <Card.Title>novedad: {tipoDeNovedad}</Card.Title>
           <Card.Text>
-            {descripcion}
+            <p>descripcion: {descripcion}</p>
+            <p>codigo De Equipo: {codigoDeEquipo}</p>
+            <p>Justificación: {justificacion}</p>
+            <p>Valor activo: {valorActivo}</p>
           </Card.Text>
-          <Button variant="primary"></Button>
+          <Button variant="primary">aprovador: {aprovador}</Button>
         </Card.Body>
       </Card>
-  </div>
+    </div>
   )
 }
