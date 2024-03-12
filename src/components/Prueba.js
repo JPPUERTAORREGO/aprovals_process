@@ -16,7 +16,7 @@ export const Prueba = () => {
   const [valorAprovedor , setValorAprovedor] = useState("")
   
   // console.log(solicitudes)
-  console.log(valorSelect)
+  //console.log(valorSelect)
   // console.log(valorDescripcion)
   // console.log(valorEquipo)
   // console.log(valorUbicacion)
@@ -60,9 +60,10 @@ export const Prueba = () => {
 
 
   const handleOnClick =(e)=>{
-  
+    
     const newSolicitud = {
       "id": "valorId",
+      "fecha": new Date().toLocaleDateString(),
       "tipo de novedad": valorSelect,
       "Descripción": valorDescripcion,
       "Código de equipo": valorEquipo,
@@ -70,10 +71,12 @@ export const Prueba = () => {
       "Justificación": valorJustificaion, 
       "Valor activo": valorActivo,
       "Archivo": valorArchivo,
-      "Aprovador": valorAprovedor
+      "Aprovador": valorAprovedor,
+      "Estado":"No aprovado"
     }
+    //console.log(newSolicitud)
 
-    console.log(newSolicitud)
+    // console.log(newSolicitud)
     setSolicitudes([...solicitudes,newSolicitud]) 
     e.preventDefault()
     setValorSelect("")
@@ -84,10 +87,11 @@ export const Prueba = () => {
     setValorActivo("")
     setValorArchivo("")
     setValorAprovedor("")
+
+    
   }
-
+console.log(solicitudes)
   return (  
-
     <>
       <div>
         <Header_component 

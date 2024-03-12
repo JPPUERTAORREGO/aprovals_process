@@ -1,36 +1,44 @@
 {"solicitudes":[
       {
         "id": 1,
+        "fecha":"23/02/2010",
         "tipo de novedad": "Compra",
-        "Descripción":"12",
+        "Descripción":"",
         "Código de equipo":"",
         "Ubicacion técnica":"",
         "Justificación":"",
         "Valor activo":"",
         "Archivo":"",
-        "Aprovador":["Persona 1", "Persona 2", "Persona 3", "Persona 4", "Persona 5", "Persona 6"]
+        "Aprovador":"Persona 1",
+        "Estado":"Aprovado"
       },
       {
         "id": 2,
+        "fecha":"27/12/2021",
         "tipo de novedad": "Levantamiento",
-        "Descripción":"15",
+        "Descripción":"",
         "Código de equipo":"",
         "Ubicacion técnica":"",
         "Justificación":"",
         "Valor activo":"",
         "Archivo":"",
-        "Aprovador":["Persona 1", "Persona 2", "Persona 3", "Persona 4", "Persona 5", "Persona 6"]
+        "Aprovador": "Persona 2",
+        "Estado":"No aprovado"
+
       },
       {
         "id": 3,
+        "fecha":"13/09/2024",
         "tipo de novedad": "Modificación",
-        "Descripción":"1558",
+        "Descripción":"",
         "Código de equipo":"",
         "Ubicacion técnica":"",
         "Justificación":"",
         "Valor activo":"",
         "Archivo":"",
-        "Aprovador":["Persona 1", "Persona 2", "Persona 3", "Persona 4", "Persona 5", "Persona 6"]
+        "Aprovador": "Persona 3",
+        "Estado":"Aprovado"
+
       }
     ]
   }

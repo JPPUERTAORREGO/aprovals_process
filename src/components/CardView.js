@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 export const CardView = ({solicitud}) => {
-  console.log(solicitud)
+  //console.log(solicitud)
 
   const { 
     "id": id,
