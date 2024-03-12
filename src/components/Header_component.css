@@ -1,0 +1,38 @@
+.navbar-brand img {
+    float: left; /* Hace que la imagen flote a la izquierda */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.navbar-brand h5 {
+    float: left; /* Hace que el texto flote a la izquierda */
+}
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 9px;
+    text-decoration: none;
+}
+
+.navbar-center {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    flex-grow: 1;
+}
+
+.navbar-right {
+    float: right;
+}
+
+.navbar-right a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 4px 10x;
+    text-decoration: none;
+}
