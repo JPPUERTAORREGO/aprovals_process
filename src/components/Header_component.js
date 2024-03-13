@@ -8,12 +8,21 @@ import Modal from 'react-bootstrap/Modal';
 
 
 export const Header_component = (props) => {
-  const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  const {handleOnChageSelect,handleOnChangeEquipo,handleOnChangeCodigo,handleOnChangeUbi,handleOnChangeJusti,handleOnChangeValor,handleOnChangeMulti,handleOnChageSelectProve,handleOnClick} = props
+  const {handleOnChageSelect,
+    handleOnChangeEquipo,
+    handleOnChangeCodigo,
+    handleOnChangeUbi,
+    handleOnChangeJusti,
+    handleOnChangeValor,
+    handleOnChangeMulti,
+    handleOnChageSelectProve,
+    handleOnClick,
+    handleShow,
+    handleClose,
+    show
+  } = props
+  
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" className="bg bg-dark">

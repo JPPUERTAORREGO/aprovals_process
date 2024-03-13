@@ -4,7 +4,10 @@ import { ListView } from './ListView';
 // import { NewSolicitudForm } from './NewSolicitudForm';
 import { Header_component } from './Header_component';
 
-export const Prueba = () => {
+export const Prueba = (props) => {
+  const [show, setShow] = useState(false);
+
+
   const [solicitudes,setSolicitudes] = useState(data.solicitudes)
   const [valorSelect , setValorSelect] = useState("")
   const [valorDescripcion , setValorDescripcion] = useState("")
@@ -24,6 +27,9 @@ export const Prueba = () => {
   // console.log(valorActivo)
   // console.log(valorArchivo)
   // console.log(valorAprovedor)
+
+    const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const handleOnChageSelect =(e)=>{
     setValorSelect(e.target.value)
@@ -75,7 +81,7 @@ export const Prueba = () => {
       "Estado":"No aprovado"
     }
     //console.log(newSolicitud)
-
+    
     // console.log(newSolicitud)
     setSolicitudes([...solicitudes,newSolicitud]) 
     e.preventDefault()
@@ -87,10 +93,15 @@ export const Prueba = () => {
     setValorActivo("")
     setValorArchivo("")
     setValorAprovedor("")
-
+    setShow(false)
     
+    
+
   }
-console.log(solicitudes)
+  
+
+  
+  console.log(solicitudes)
   return (  
     <>
       <div>
@@ -105,6 +116,9 @@ console.log(solicitudes)
           handleOnChageSelectProve={handleOnChageSelectProve}
           // handleOnChangeAge={handleOnChangeAge}
           handleOnClick = {handleOnClick}
+          handleClose = {handleClose}
+          handleShow ={handleShow}
+          show = {show}
         />
         <ListView solicitudes ={solicitudes}/>
       </div>
