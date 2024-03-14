@@ -20,7 +20,12 @@ export const Header_component = (props) => {
     handleOnClick,
     handleShow,
     handleClose,
-    show
+    show,
+    // register,
+    // handleSubmit,
+    // errors,
+    manejarCancelacion,
+    handleSubmit,
   } = props
   
   return (
@@ -52,57 +57,62 @@ export const Header_component = (props) => {
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
+        
       >
         <Modal.Header closeButton>
           <Modal.Title>Nueva solucitud</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <label className='form-label'></label>
-          <select  className='form-select' onChange={handleOnChageSelect}>
-            <option >Seleccionar tipo de novedad</option>
-            <option >Compra</option>
-            <option >Levantamiento</option>
-            <option >Modificación</option>
-            <option >Traslado</option>
-            <option >Baja</option>
-            <option >Suspensión depreciación</option>
-          </select>
+        {/* onSubmit={handleSubmit} */}
+          <form  onSubmit={handleSubmit}>
+            <label className='form-label'></label>
+            <select  className='form-select' onChange={handleOnChageSelect}>
+              <option >Seleccionar tipo de novedad</option>
+              <option >Compra</option>
+              <option >Levantamiento</option>
+              <option >Modificación</option>
+              <option >Traslado</option>
+              <option >Baja</option>
+              <option >Suspensión depreciación</option>
+            </select>
 
-          <label className='form-label'></label>
-          <textarea  placeholder='Descripción del equipo' className='form-control' onChange={handleOnChangeEquipo}/>
+            <label className='form-label'></label>
+            <textarea  placeholder='Descripción del equipo' className='form-control' onChange={handleOnChangeEquipo}/>
 
-          <label className='form-label'></label>
-          <input placeholder='Código del equipo'  type="text" className='form-control' onChange={handleOnChangeCodigo}/>
+            <label className='form-label'></label>
+            <input placeholder='Código del equipo'  type="text" className='form-control' onChange={handleOnChangeCodigo}/>
 
-          <label className='form-label'></label>
-          <input placeholder='Ubicación técnica' type="text" className='form-control' onChange={handleOnChangeUbi}/>
+            <label className='form-label'></label>
+            <input placeholder='Ubicación técnica' type="text" className='form-control' onChange={handleOnChangeUbi}/>
 
-          <label className='form-label'></label>
-          <input placeholder='Justificación'  type="text" className='form-control' onChange={handleOnChangeJusti}/>
+            <label className='form-label'></label>
+            <input placeholder='Justificación'  type="text" className='form-control' onChange={handleOnChangeJusti}/>
 
-          <label className='form-label'></label>
-          <input placeholder='Valor activo (COP)'step="0.01" type="number" className='form-control' onChange={handleOnChangeValor}/>
+            {/* para que entre solo numeros decimales es step="0.01" */}
+            <label className='form-label'></label>
+            <input placeholder='Valor activo (COP)'step="0.01" type="number" className='form-control' onChange={handleOnChangeValor}/> 
 
-          <label className='form-label'></label>
-          <input  type="file" multiple className='form-control' onChange={handleOnChangeMulti}/>
+            <label className='form-label'></label>
+            <input  type="file" multiple className='form-control' onChange={handleOnChangeMulti}/>
 
-          <label className='form-label'></label>
-          <select  className='form-select' onChange={handleOnChageSelectProve}>
-            <option value="">Nombre del aprovador</option>
-            <option value="opcion1">Persona 1</option>
-            <option value="opcion2">Persona 2</option>
-            <option value="opcion3">Persona 3</option>
-            <option value="opcion4">Persona 4</option>
-            <option value="opcion5">Persona 5</option>
-            <option value="opcion6">Persona 6</option>
-          </select>
+            <label className='form-label'></label>
+            <select  className='form-select' onChange={handleOnChageSelectProve}>
+              <option value="">Nombre del aprovador</option>
+              <option value="opcion1">Persona 1</option>
+              <option value="opcion2">Persona 2</option>
+              <option value="opcion3">Persona 3</option>
+              <option value="opcion4">Persona 4</option>
+              <option value="opcion5">Persona 5</option>
+              <option value="opcion6">Persona 6</option>
+            </select>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={manejarCancelacion}>
+                Cerrar
+              </Button>
+              <Button onClick={handleOnClick} variant="primary" type="submit" >Enviar</Button>
+            </Modal.Footer>
+          </form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Cerrar
-          </Button>
-          <Button variant="primary"  onClick={handleOnClick}>Enviar</Button>
-        </Modal.Footer>
       </Modal>
     </div>
   )
