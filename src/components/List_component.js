@@ -5,6 +5,7 @@ export const List_component = () => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div className="listComponent">
       {Data.solicitudes.map((solicitud, index) => (  // itera sobre los datos
         <Card key={index} className="cardComponent" style={{ width: '18rem' }}>
@@ -45,6 +46,13 @@ export const List_component = () => {
 
 
 export default List_component;
+=======
+    <div>
+      <h1>este es Center</h1>
+    </div>
+  )
+}
+>>>>>>> parent of 34b4e87 (Version 8)
 =======
     <div>
       <h1>este es Center</h1>
