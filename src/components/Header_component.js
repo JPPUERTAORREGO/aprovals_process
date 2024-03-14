@@ -117,7 +117,7 @@ export const Header_component = (props) => {
               <input placeholder='Valor activo (COP)' {...register("valor", { required: true })} step="0.01" type="number" className='form-control'/>
               {errors.valor && <span style={{ color: 'red' }}>Este campo es requerido</span>}
 
-              <label className='form-label'></label>
+              <label className='form-label'>Agregar archivo</label>
               <input {...register("archivo", { required: true })} type="file" multiple className='form-control'/>
               {errors.archivo && <span style={{ color: 'red' }}>Este campo es requerido</span>} 
 

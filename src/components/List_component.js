@@ -1,21 +1,8 @@
-import React, { useState } from 'react'
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Modal from 'react-bootstrap/Modal';
-import './List_component.css';
-import Data from './Data';
+import React from 'react'
 
 export const List_component = () => {
-  const [show, setShow] = useState(false);  // estado para controlar la visibilidad del modal
-  const [currentData, setCurrentData] = useState(null);  // estado para almacenar los datos actuales
-
-  const handleClose = () => setShow(false);  // cierra el modal
-  const handleShow = (data) => {  // muestra el modal y establece los datos actuales
-    setCurrentData(data);
-    setShow(true);
-  };
-
   return (
+<<<<<<< HEAD
     <div className="listComponent">
       {Data.solicitudes.map((solicitud, index) => (  // itera sobre los datos
         <Card key={index} className="cardComponent" style={{ width: '18rem' }}>
@@ -56,3 +43,10 @@ export const List_component = () => {
 
 
 export default List_component;
+=======
+    <div>
+      <h1>este es Center</h1>
+    </div>
+  )
+}
+>>>>>>> parent of 34b4e87 (Version 8)
