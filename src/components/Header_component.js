@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal'; // Importamos el componente Modal de 
 import { useForm } from 'react-hook-form';  // Importamos el hook useForm de react-hook-form.
 
 export const Header_component = (props) => {
-// Usamos el hook useState para manejar el estado del modal y de los archivos
+  // Usamos el hook useState para manejar el estado del modal y de los archivos
   const [show, setShow] = useState(false); // Estado para mostrar u ocultar el modal
   const [archivos, setArchivos] = useState([]); // Estado para almacenar los archivos seleccionados por el usuario.
 
