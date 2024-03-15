@@ -5,7 +5,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-export const Detail_component = ({ cambiarPosicion, cambiarContador, posicion, contador, activeKey, setActiveKey }) => {
+export const Detail_component = ({ cambiarPosicion, cambiarContador, posicion, contador, activeKey, setActiveKey, soli }) => {
   const usuario = data.solicitudes[posicion];
   const [comentario, setComentario] = useState('');
   const [historialComentarios, setHistorialComentarios] = useState([]);
