@@ -33,6 +33,10 @@
     color: white;
 }
 
+.bg{
+    background-color: black;
+}
+
 .bttn-usuario{
     display: flex;
     flex-direction: row;

@@ -1,18 +1,19 @@
 import React, { useState } from 'react'
 import { CardView } from './CardView'
-import { Detail_component } from './Detail_component'
+import './CardView.css';
 
-export const ListView = ({solicitudes}) => {
-  const [selectedSolicitud, setSelectedSolicitud] = useState(null);
+//import data from './false_users.json'
 
-  const handleDetailClick = (solicitud) => {
-    setSelectedSolicitud(solicitud);
-  }
-
+export const ListView = ({solicitudes, cambiarPosicion, handleAccordionToggle}) => {
+  
+//console.log(solicitudes)
   return (
-    <div>
-      {solicitudes.map((solicitud)=>(
-        <CardView key={solicitud.id} solicitud={solicitud} onDetailClick={handleDetailClick} />
+    <div className='ListViewCard'>
+      {solicitudes.map((solicutud)=>(
+        <CardView key = {solicutud.id}
+        solicitud= {solicutud}
+        cambiarPosicion={cambiarPosicion}
+        handleAccordionToggle={handleAccordionToggle}/>
       ))}
       {selectedSolicitud && <Detail_component soli={selectedSolicitud} />}
     </div>

@@ -1,0 +1,15 @@
+.ListViewCard{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    overflow: auto;
+}
+
+.carDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top:  3rem;
+    padding-bottom:  3rem;
+    margin: 15px; 
+}
