@@ -29,15 +29,7 @@ function App() {
   };
   return (
     <div className="App">
-      <div className="Header">
-        <Prueba />
-      </div>
-      <div className="List">
-        <List_component cambiarPosicion={cambiarPosicion} handleAccordionToggle={handleAccordionToggle} />
-      </div>
-      <div className="Detail">
-        <Detail_component cambiarPosicion={cambiarPosicion} cambiarContador={cambiarContador} posicion={posicion} contador={contador} handleAccordionToggle={handleAccordionToggle} activeKey={activeKey} setActiveKey={setActiveKey} />
-      </div>
+      <Prueba/>
     </div>
   );
 }
