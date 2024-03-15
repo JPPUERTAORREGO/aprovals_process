@@ -3,9 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './CardView.css';
 
-export const CardView = ({ solicitud,cambiarPosicion, handleAccordionToggle }) => {
-  //console.log(solicitud)
-
+export const CardView = ({ solicitud, handleAccordionToggle,onDetailClick }) => {
   const {
     "id": id,
     "tipo de novedad": tipoDeNovedad,
@@ -31,7 +29,7 @@ export const CardView = ({ solicitud,cambiarPosicion, handleAccordionToggle }) =
               <p>Justificación: {justificacion}</p>
               <p>Valor activo: {valorActivo}</p>
             </Card.Text>
-            <Button onClick={() => { cambiarPosicion(id); handleAccordionToggle(); }} variant="primary">Ver Mas</Button>
+            <Button onClick={() => { handleAccordionToggle(); onDetailClick(solicitud)}} variant="primary">Ver Mas</Button>
           </Card.Body>
         </Card>
       </div>
