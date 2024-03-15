@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom';
 
 import { Prueba } from './components/Prueba';
 import { Header_component } from './components/Header_component';
-import { List_component } from './components/List_component';
 import { Detail_component } from './components/Detail_component';
 import Data from './Data.js';
 
