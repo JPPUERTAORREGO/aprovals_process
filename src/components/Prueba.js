@@ -107,10 +107,6 @@ export const Prueba = (props) => {
     }
   }
 
-  // // Definimos la función para manejar el envío del formulario
-  // const manejarEnvio = (solicitudes) => {
-  // };
-  
   // Definimos la función para manejar la cancelación del formulario
   const manejarCancelacion = () => {
     // Mostramos un cuadro de diálogo de confirmación al usuario

@@ -2,7 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-export const CardView = ({solicitud}) => {
+export const CardView = ({solicitud, onDetailClick}) => {
   //console.log(solicitud)
 
   const { 
@@ -26,7 +26,7 @@ export const CardView = ({solicitud}) => {
           <Card.Text>
             {descripcion}
           </Card.Text>
-          <Button variant="primary"></Button>
+          <Button variant="primary"  onClick={() => onDetailClick(solicitud)}>Ver detalles</Button>
         </Card.Body>
       </Card>
   </div>
