@@ -21,6 +21,12 @@ export const Detail_component = ({soli}) => {
       <h2>Detalles de la Solicitud</h2>
       <p>Nombre: {tipoDeNovedad}</p>
       <p>Descripción: {descripcion}</p>
+      <p>codigoDeEquipo: {codigoDeEquipo}</p>
+      <p>Ubicacion técnica: {ubicacionTecnica}</p>
+      <p>Justificación: {justificacion}</p>
+      <p>Valor activo: {valorActivo}</p>
+      <p>Archivo: {archivo}</p>
+      <p>Aprovador:{aprovador}</p>
       {/* Renderiza aquí el resto de los detalles de `soli` */}
     </div>
   )
